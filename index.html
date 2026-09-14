@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<title>Treball Solidari · Historias por país</title>
+<link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+<main class="app">
+<header class="header"><div class="ey">Treball Solidari · Cooperación internacional</div><h1 id="pageTitle">Nuestra historia</h1><p class="intro">Proyectos, alianzas, resultados y encuentros que ayudan a entender la trayectoria de Treball Solidari en cada país.</p><div class="stats"><span class="stat" id="statEvents">—</span><span class="stat" id="statYears">—</span><span class="stat" id="statPhotos">—</span></div><nav aria-label="País" class="countries" id="countries"></nav><p class="manualEntry"><a href="./manual.html">Manual de gestión de esta web ↗</a></p></header>
+<section class="timeline" id="timeline"><div class="loading" id="loading"><strong>Cargando historia…</strong>Conectando con la base de hitos de Treball Solidari.</div><div class="stage" hidden="" id="stage"><div class="media" id="media"></div><article class="story"><div class="date" id="date"></div><h2 id="title"></h2><p id="text"></p><span class="tag" id="tag"></span><a class="source" id="source" rel="noopener noreferrer" target="_blank">Ver fuente ↗</a><div class="nav"><button aria-label="Hito anterior" id="prev" type="button">‹</button><button aria-label="Hito siguiente" id="next" type="button">›</button><span class="count" id="count"></span></div></article></div><div class="rail" hidden="" id="rail"><div class="strip" id="strip"></div><div class="progress"><i id="bar"></i></div></div></section>
+<section class="embedHelp"><h3>Incrustar este timeline en WordPress</h3><p>La persona que gestiona WordPress solo tiene que copiar este código en un bloque de <strong>HTML personalizado</strong>. El código cambia automáticamente al seleccionar otro país.</p><div class="embedUrl" id="embedUrl"></div><div class="embedCode"><pre id="embedCode"></pre><button class="copyBtn" id="copyEmbed" type="button">Copiar código</button></div></section>
+<div class="status">Treball Solidari · Historias por país · Base dinámica Google Sheets</div>
+</main>
+<div id="syncState" class="syncState" aria-live="polite"></div>
+<script src="./assets/data/nicaragua.js"></script>
+<script src="./assets/data/guatemala.js"></script>
+<script src="./assets/data/el-salvador.js"></script>
+<script src="./assets/data/burkina-faso.js"></script>
+<script src="./assets/data/senegal.js"></script>
+<script src="./assets/data/mali.js"></script><script src="./assets/app.js"></script>
+</body>
+</html>
