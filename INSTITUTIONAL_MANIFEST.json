@@ -1,0 +1,57 @@
+[
+  {
+    "path": "AGENTS.md",
+    "size": 1837,
+    "sha256": "6d1c4ad7af45446e8325b812da36f1440064146598e3fecb26cff36874735f32"
+  },
+  {
+    "path": "README.md",
+    "size": 1607,
+    "sha256": "2e54ba9ed91b220c6bf8eadcfb2867e6f29d16eb59535203b3e791a05873401c"
+  },
+  {
+    "path": "docs/ARQUITECTURA.md",
+    "size": 1617,
+    "sha256": "3d13f664848ffc8915e89831a00630d000f353857f36a56febd7c2f049720bc4"
+  },
+  {
+    "path": "docs/DESPLIEGUE.md",
+    "size": 741,
+    "sha256": "457720b34dc1aa1439c4da13785cebd6aad1fe4419e999e038869eb9def416be"
+  },
+  {
+    "path": "docs/ESTADO_TRASPASO.md",
+    "size": 605,
+    "sha256": "2dec39ed255ec401462c3b669bf820ea3007ada42fb3db0058f24dc53fe37b76"
+  },
+  {
+    "path": "docs/MANUAL_GESTION.md",
+    "size": 1677,
+    "sha256": "492cbb49e1f5a29578f9c779d07b26ed0a9acaeef1faff410172f19a2e302fbf"
+  },
+  {
+    "path": "docs/PROMPTS_CHATGPT.md",
+    "size": 1017,
+    "sha256": "e81bc626a5aad22a9275744c67456ee7dba9c0e93858f4e6ff3d479e0c09ca22"
+  },
+  {
+    "path": "docs/RECUPERACION.md",
+    "size": 1118,
+    "sha256": "2f452d55a0d30a5ba6182bb2c6066234ff8f8cb985d67f5f8f39bb31c5fd1c4b"
+  },
+  {
+    "path": "index.html",
+    "size": 80757,
+    "sha256": "c6b4fc7a5edbbcf33d47c2f6f584fd627903bf4bda7aa53d85ac2c3bef3d56ed"
+  },
+  {
+    "path": "manual.html",
+    "size": 3730,
+    "sha256": "4855c4d627760339a376218ef137cc1bff16d913b99019a577d29dbe57cb0eab"
+  },
+  {
+    "path": "vercel.json",
+    "size": 51,
+    "sha256": "3dbafe0f8b790deb20f72e6299c833b323c7aec6cb1e4342f6529576d05f1e22"
+  }
+]
