@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Treball Solidari · Manual de gestión de Historias</title>
+<style>
+:root{--green:#4d761d;--ink:#111;--muted:#5f655d;--line:#dfe3dc;--soft:#f5f7f2}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}.wrap{max-width:980px;margin:auto;padding:32px 22px 70px}.ey{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}h1{font-size:clamp(34px,6vw,62px);line-height:1;margin:10px 0 16px;letter-spacing:-.035em}h2{margin-top:38px;font-size:26px}p,li{line-height:1.65}.lead{font-size:18px;color:var(--muted);max-width:780px}.box{border:1px solid var(--line);background:var(--soft);padding:20px;margin:18px 0}.steps{padding-left:22px}.prompt{white-space:pre-wrap;background:#111;color:#fff;padding:18px;border-radius:6px;font:13px/1.55 Consolas,monospace}.back{display:inline-block;margin-top:28px;color:var(--green);font-weight:800;text-decoration:none;border-bottom:2px solid #78b82a}.warn{border-left:4px solid var(--green);padding-left:16px}.small{font-size:12px;color:var(--muted)}
+</style>
+</head>
+<body><main class="wrap">
+<div class="ey">Treball Solidari · Cooperación internacional</div>
+<h1>Manual de gestión de Historias TS</h1>
+<p class="lead">Esta guía permite mantener el timeline sin conocimientos de programación. El contenido habitual se gestiona desde la hoja institucional; los cambios de diseño o funcionamiento pueden pedirse a ChatGPT/Codex sobre el repositorio institucional.</p>
+
+<h2>Publicar un nuevo hito</h2>
+<ol class="steps"><li>Abre la hoja institucional de gestión.</li><li>Entra en el país correspondiente y crea una fila con un ID único.</li><li>Completa fecha, tipo, título, resumen, imagen y fuente.</li><li>Trabaja primero como <strong>BORRADOR</strong>, después <strong>REVISAR</strong> y finalmente <strong>PUBLICAR</strong>.</li><li>Abre la web y comprueba el resultado antes de dar el hito por cerrado.</li></ol>
+<div class="box warn"><strong>Importante:</strong> la hoja privada de gestión no debe hacerse pública. El feed técnico puede ser públicamente legible para que funcione la web, pero nunca públicamente editable.</div>
+
+<h2>Pedir un cambio a ChatGPT/Codex</h2>
+<p>Selecciona el repositorio institucional de esta web y utiliza como base:</p>
+<div class="prompt">Lee primero AGENTS.md y la documentación de docs/. Quiero realizar este cambio: [DESCRIBIR CAMBIO]. Mantén el funcionamiento actual, las rutas por país, el modo embed de WordPress, el diseño responsive y la copia segura de datos. Trabaja en una preview o rama de prueba. Antes de publicar, dime exactamente qué has cambiado y qué has comprobado.</div>
+
+<h2>Qué debe comprobarse</h2>
+<ul class="steps"><li>La web abre y muestra contenido.</li><li>Se puede cambiar entre los seis países.</li><li>Los botones anterior y siguiente funcionan.</li><li>Las imágenes que fallen muestran una alternativa legible.</li><li>El modo WordPress con <code>&amp;embed=1</code> funciona.</li><li>Los datos siguen visibles aunque Google Sheets falle temporalmente.</li></ul>
+
+<h2>Si algo falla</h2>
+<p>Primero revisa la última preview o despliegue. Si el problema empezó tras una modificación, restaura la versión anterior desde GitHub/Cloudflare. Si sólo fallan los datos nuevos, revisa el feed y el estado PUBLICAR; si sólo falla una imagen, sustituye la URL por un recurso estable de TS.</p>
+
+<a class="back" href="./">← Volver a Historias TS</a>
+<p class="small">Manual operativo público. No contiene información de acceso ni datos reservados.</p>
+</main></body></html>
