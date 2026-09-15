@@ -1,23 +1,48 @@
-# Arquitectura
+# Arquitectura actual de Historias TS
 
 ## Flujo funcional
 
-Hoja privada de gestión → filtro `Estado = PUBLICAR` → hoja pública de feed → visualizador web → iframe WordPress.
+Hoja privada de gestión → filtro `Estado = PUBLICAR` → feed público institucional → visualizador web → iframe WordPress cuando se usa modo embed.
 
-La web incorpora además un snapshot de seguridad. El snapshot se renderiza primero y la sincronización de Google Sheets se realiza después. Así, una caída temporal de Sheets no deja el timeline vacío.
+La web incorpora además un snapshot local de seguridad por país. El snapshot se muestra primero y la sincronización con Google Sheets se realiza después. Así, una caída temporal de Sheets no deja el timeline vacío.
 
 ## Componentes
 
-- `index.html`: interfaz, estilos, JavaScript y snapshot.
+- `index.html`: estructura de la aplicación.
+- `assets/style.css`: estilos.
+- `assets/app.js`: lógica, conexión con el feed y navegación.
+- `assets/data/*.js`: snapshot local de seguridad de los seis países.
 - `manual.html`: manual operativo público, sin información reservada.
-- `vercel.json`: compatibilidad con el alojamiento Vercel durante la transición.
 - `docs/`: documentación técnica y operativa.
+- `vercel.json`: archivo heredado conservado sólo por compatibilidad/rollback histórico; producción actual es Cloudflare Pages.
+
+## Producción
+
+- URL: https://historias-ts.pages.dev/
+- Hosting: Cloudflare Pages.
+- Rama: `main`.
+- Repositorio: `cooperante-TS/historias-ts`.
 
 ## Fuente de datos
 
-El identificador del feed se encuentra en `index.html`, constante `SHEET_ID`.
+El identificador del feed institucional se encuentra en `assets/app.js`, constante `SHEET_ID`.
 
-Cada pestaña pública debe llamarse exactamente como espera `COUNTRIES`: Nicaragua, Guatemala, El Salvador, Burkina Faso, Senegal y Mali.
+Feed actual:
+
+`1hf3f-CiZBLLPSdHzhOzVkLP6RPykOHHmIj2oqxLFY7E`
+
+Cada pestaña pública debe llamarse exactamente:
+
+- Nicaragua
+- Guatemala
+- El Salvador
+- Burkina Faso
+- Senegal
+- Mali
+
+Hoja privada de gestión:
+
+`1IPEnxkQ9qJh0GtmTr8j3TVDrUP09Vc5_WSXcJUhu380`
 
 ## Contrato de columnas del feed
 
@@ -36,12 +61,17 @@ Cada pestaña pública debe llamarse exactamente como espera `COUNTRIES`: Nicara
 13. Destacado
 14. Fecha actualización
 
+## Permisos correctos
+
+- Hoja de gestión: privada.
+- Feed público: lectura pública, nunca edición pública.
+
 ## Dependencias externas
 
-- Google Sheets GViz para sincronización.
-- Google Drive para imágenes nuevas cuando TS las aloje allí.
-- Algunas imágenes históricas siguen dependiendo de CDN/Instagram y deben sustituirse progresivamente por recursos estables de TS.
+- Google Sheets GViz para sincronización dinámica.
+- Google Drive si TS decide alojar imágenes públicas allí.
+- Algunas imágenes históricas dependen de CDN/Instagram y conviene sustituirlas progresivamente por recursos estables controlados por TS.
 
 ## Sin servidor
 
-No existe base de datos propia, API privada ni servidor de aplicación. La web puede desplegarse como contenido estático en Cloudflare Pages.
+No existe backend propio ni servidor de aplicación. Es una web estática desplegada en Cloudflare Pages.
