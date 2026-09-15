@@ -1,23 +1,39 @@
-# Despliegue
+# Despliegue institucional
 
-## Destino recomendado
-Cloudflare Pages conectado al repositorio GitHub institucional de Treball Solidari.
+## Producción vigente
 
-## Tipo de proyecto
-Sitio estático. No requiere instalación de dependencias ni proceso de build.
+- URL: https://historias-ts.pages.dev/
+- Hosting: Cloudflare Pages
+- Repositorio: `cooperante-TS/historias-ts`
+- Rama de producción: `main`
 
-## Configuración esperada en Cloudflare Pages
+El proyecto es un sitio estático. No necesita instalar dependencias ni ejecutar un build complejo.
+
+## Configuración Cloudflare Pages
+
 - Framework preset: None / Static HTML.
-- Build command: vacío.
-- Output directory: raíz del repositorio.
+- Build command: vacío o `exit 0` según la configuración del proyecto.
+- Output directory: raíz del repositorio (`.`).
 - Rama de producción: `main`.
 
-## Flujo recomendado
-1. Crear una rama para el cambio.
-2. Generar preview.
-3. Revisar visualmente escritorio y móvil.
-4. Fusionar en `main`.
-5. Comprobar producción y WordPress.
+Cloudflare despliega automáticamente los cambios aceptados en `main`.
 
-## Compatibilidad Vercel
-`vercel.json` se conserva durante la transición para que la copia actual pueda seguir funcionando hasta el corte definitivo.
+## Qué comprobar después de un cambio técnico
+
+1. Portada.
+2. Selector de los seis países.
+3. Navegación anterior/siguiente.
+4. Modo embed, por ejemplo `?pais=guatemala&embed=1`.
+5. Imágenes y fallback.
+6. Móvil y ordenador.
+7. Que la web siga mostrando el snapshot si el feed no responde temporalmente.
+
+## Si producción falla
+
+No editar producción manualmente.
+
+1. Restaurar el último commit estable en GitHub.
+2. Esperar al redespliegue automático de Cloudflare.
+3. Comprobar de nuevo la web.
+
+La antigua versión de Vercel se conserva sólo como rollback temporal y no debe considerarse la producción principal.
