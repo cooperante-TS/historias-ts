@@ -1,0 +1,217 @@
+/* Mobile-first layer for WordPress embeds. Desktop remains unchanged. */
+@media (max-width: 700px) {
+  .app {
+    padding: 12px;
+  }
+
+  .header h1 {
+    font-size: clamp(30px, 10vw, 42px);
+  }
+
+  .intro {
+    font-size: 13px;
+    line-height: 1.42;
+  }
+
+  .stats {
+    margin-top: 10px;
+  }
+
+  .stat {
+    padding: 6px 9px;
+    font-size: 10px;
+  }
+
+  .countries {
+    gap: 6px;
+    padding: 12px 0 2px;
+  }
+
+  .country {
+    padding: 8px 11px;
+    font-size: 12px;
+  }
+
+  .timeline {
+    margin-top: 10px;
+  }
+
+  .stage {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .media {
+    height: clamp(190px, 38dvh, 280px);
+    min-height: 190px;
+    max-height: 280px;
+  }
+
+  .story {
+    padding: 16px 18px 14px;
+    justify-content: flex-start;
+  }
+
+  .date {
+    font-size: 10px;
+    letter-spacing: .07em;
+  }
+
+  .story h2 {
+    margin: 6px 0 9px;
+    font-size: clamp(21px, 6.4vw, 28px);
+    line-height: 1.02;
+    letter-spacing: -.025em;
+  }
+
+  .story p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.42;
+  }
+
+  .tag {
+    margin-top: 9px;
+    padding: 5px 8px;
+    font-size: 9px;
+  }
+
+  .source {
+    margin: 9px 0 7px 7px;
+    font-size: 11px;
+  }
+
+  .nav {
+    gap: 8px;
+    margin-top: 5px;
+  }
+
+  .nav button {
+    width: 38px;
+    height: 38px;
+    font-size: 21px;
+  }
+
+  .count {
+    font-size: 10px;
+  }
+
+  .caption {
+    left: 8px;
+    bottom: 8px;
+    max-width: calc(100% - 16px);
+    padding: 5px 7px;
+    font-size: 9px;
+    line-height: 1.2;
+    max-height: 34px;
+    overflow: hidden;
+  }
+
+  .fitToggle {
+    top: 8px;
+    right: 8px;
+    padding: 7px 9px;
+    font-size: 9px;
+  }
+
+  .rail {
+    padding: 10px;
+  }
+
+  .event {
+    flex-basis: 145px;
+    min-height: 62px;
+    padding: 8px;
+  }
+
+  .event.active {
+    padding: 7px;
+  }
+
+  .event span {
+    font-size: 11px;
+  }
+}
+
+/* In WordPress embed mode the event itself is the interface. */
+@media (max-width: 700px) {
+  body.embed {
+    overflow: hidden;
+    background: #fff;
+  }
+
+  body.embed .timeline {
+    height: 100dvh;
+    min-height: 0;
+    margin: 0;
+    border: 0;
+    overflow: hidden;
+  }
+
+  body.embed .stage {
+    height: 100dvh;
+    min-height: 0;
+    grid-template-rows: clamp(190px, 38dvh, 280px) minmax(0, 1fr);
+    overflow: hidden;
+  }
+
+  body.embed .media {
+    height: 100%;
+    min-height: 0;
+    max-height: none;
+  }
+
+  body.embed .story {
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+  }
+
+  /* Swipe + arrows are enough on mobile; removing the rail frees a large part of the screen. */
+  body.embed .rail {
+    display: none !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .story {
+    padding: 14px 15px 12px;
+  }
+
+  .story h2 {
+    font-size: clamp(20px, 6vw, 25px);
+    margin-bottom: 7px;
+  }
+
+  .story p {
+    font-size: 12.5px;
+    line-height: 1.38;
+  }
+
+  body.embed .stage {
+    grid-template-rows: clamp(175px, 34dvh, 245px) minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 420px) and (max-height: 700px) {
+  body.embed .stage {
+    grid-template-rows: clamp(165px, 31dvh, 215px) minmax(0, 1fr);
+  }
+
+  .story h2 {
+    font-size: 20px;
+  }
+
+  .story p {
+    font-size: 12px;
+    line-height: 1.34;
+  }
+
+  .tag,
+  .source {
+    margin-top: 6px;
+  }
+}
