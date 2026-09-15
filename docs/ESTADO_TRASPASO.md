@@ -1,14 +1,35 @@
 # Estado de traspaso institucional
 
-- GitHub institucional operativo bajo `cooperante-TS`.
-- Hoja de gestión institucional verificada como privada y propiedad de TS.
-- Feed institucional verificado con acceso público de sólo lectura.
-- `IMPORTRANGE` devuelve datos reales para Nicaragua, Guatemala, El Salvador, Burkina Faso, Senegal y Mali.
-- El código institucional completo permanece además respaldado en Drive durante la importación.
-- La producción anterior se mantiene como rollback hasta validar el nuevo hosting institucional.
+Estado: **COMPLETADO Y OPERATIVO**.
 
-## Pendiente
+## Situación vigente
 
-- Completar la importación del código ejecutable en este repositorio.
-- Revisar la visibilidad del repositorio según la política institucional.
-- Desplegar y validar la copia institucional antes del corte definitivo.
+- Repositorio institucional operativo: `cooperante-TS/historias-ts`.
+- Producción institucional: https://historias-ts.pages.dev/
+- Hosting: Cloudflare Pages.
+- Hoja de gestión institucional: privada y propiedad de TS.
+- Feed institucional: propiedad de TS y lectura pública cuando es necesario para la web.
+- Los seis países usan el flujo institucional.
+- El código incluye snapshot local de seguridad.
+- Manual operativo disponible en `manual.html` y `docs/MANUAL_GESTION.md`.
+- Copias de recuperación archivadas en Google Drive institucional.
+
+## Producción anterior
+
+La versión antigua de Vercel se conserva únicamente como rollback temporal. No debe considerarse producción principal ni fuente de verdad.
+
+## Qué queda por hacer
+
+No hay tareas técnicas obligatorias para el funcionamiento cotidiano.
+
+Como mantenimiento preventivo, TS debe:
+
+- mantener privada la hoja de gestión;
+- mantener el feed sin edición pública;
+- comprobar periódicamente que los seis países cargan;
+- no cambiar los IDs institucionales por documentos personales;
+- conservar las copias de Drive.
+
+## Criterio de recuperación
+
+Si una modificación rompe la web, restaurar el último commit estable del repositorio institucional y dejar que Cloudflare vuelva a desplegar `main`.
