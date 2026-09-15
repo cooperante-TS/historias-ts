@@ -12,22 +12,25 @@
 <body><main class="wrap">
 <div class="ey">Treball Solidari · Cooperación internacional</div>
 <h1>Manual de gestión de Historias TS</h1>
-<p class="lead">Esta guía permite mantener el timeline sin conocimientos de programación. El contenido habitual se gestiona desde la hoja institucional; los cambios de diseño o funcionamiento pueden pedirse a ChatGPT/Codex sobre el repositorio institucional.</p>
+<p class="lead">Para el trabajo normal no necesitas tocar código. Los hitos se gestionan desde la hoja institucional y la web se actualiza automáticamente.</p>
 
 <h2>Publicar un nuevo hito</h2>
-<ol class="steps"><li>Abre la hoja institucional de gestión.</li><li>Entra en el país correspondiente y crea una fila con un ID único.</li><li>Completa fecha, tipo, título, resumen, imagen y fuente.</li><li>Trabaja primero como <strong>BORRADOR</strong>, después <strong>REVISAR</strong> y finalmente <strong>PUBLICAR</strong>.</li><li>Abre la web y comprueba el resultado antes de dar el hito por cerrado.</li></ol>
+<ol class="steps"><li>Abre la hoja institucional de gestión.</li><li>Entra en la pestaña del país correspondiente.</li><li>Crea una fila nueva con un ID que no exista ya.</li><li>Completa fecha, tipo, título, resumen, imagen y fuente.</li><li>Trabaja primero como <strong>BORRADOR</strong>, después <strong>REVISAR</strong> y finalmente <strong>PUBLICAR</strong>.</li><li>Abre <strong>historias-ts.pages.dev</strong> y comprueba el resultado.</li></ol>
 <div class="box warn"><strong>Importante:</strong> la hoja privada de gestión no debe hacerse pública. El feed técnico puede ser públicamente legible para que funcione la web, pero nunca públicamente editable.</div>
 
-<h2>Pedir un cambio a ChatGPT/Codex</h2>
-<p>Selecciona el repositorio institucional de esta web y utiliza como base:</p>
-<div class="prompt">Lee primero AGENTS.md y la documentación de docs/. Quiero realizar este cambio: [DESCRIBIR CAMBIO]. Mantén el funcionamiento actual, las rutas por país, el modo embed de WordPress, el diseño responsive y la copia segura de datos. Trabaja en una preview o rama de prueba. Antes de publicar, dime exactamente qué has cambiado y qué has comprobado.</div>
+<h2>Si el cambio no aparece</h2>
+<ol class="steps"><li>Comprueba que el estado sea <strong>PUBLICAR</strong>.</li><li>Comprueba que estás editando la hoja institucional correcta.</li><li>Recarga la web con <strong>Ctrl+F5</strong>.</li><li>Si sólo falla una imagen, sustituye su URL por una imagen estable de TS.</li><li>Si sigue sin aparecer, pide ayuda antes de tocar GitHub o Cloudflare.</li></ol>
 
-<h2>Qué debe comprobarse</h2>
-<ul class="steps"><li>La web abre y muestra contenido.</li><li>Se puede cambiar entre los seis países.</li><li>Los botones anterior y siguiente funcionan.</li><li>Las imágenes que fallen muestran una alternativa legible.</li><li>El modo WordPress con <code>&amp;embed=1</code> funciona.</li><li>Los datos siguen visibles aunque Google Sheets falle temporalmente.</li></ul>
+<h2>Pedir un cambio de diseño a ChatGPT/Codex</h2>
+<p>Usa el repositorio institucional <strong>cooperante-TS/historias-ts</strong> y pega:</p>
+<div class="prompt">Lee README.md, AGENTS.md y docs/ antes de modificar nada. Quiero este cambio: [DESCRIBIR]. Mantén los seis países, el modo embed=1, el snapshot local y la conexión con el feed institucional. Haz el cambio de forma reversible y comprueba escritorio y móvil.</div>
 
-<h2>Si algo falla</h2>
-<p>Primero revisa la última preview o despliegue. Si el problema empezó tras una modificación, restaura la versión anterior desde GitHub/Cloudflare. Si sólo fallan los datos nuevos, revisa el feed y el estado PUBLICAR; si sólo falla una imagen, sustituye la URL por un recurso estable de TS.</p>
+<h2>Qué no debes tocar</h2>
+<ul class="steps"><li>No edites el feed público a mano.</li><li>No hagas pública la hoja privada.</li><li>No concedas edición pública al feed.</li><li>No sustituyas las hojas institucionales por hojas personales.</li><li>No cambies Cloudflare para publicar un hito normal.</li></ul>
+
+<h2>Si una modificación técnica rompe la web</h2>
+<p>Restaura el último commit estable del repositorio institucional. Cloudflare Pages volverá a desplegar automáticamente esa versión. No edites producción manualmente.</p>
 
 <a class="back" href="./">← Volver a Historias TS</a>
-<p class="small">Manual operativo público. No contiene información de acceso ni datos reservados.</p>
+<p class="small">Producción institucional: https://historias-ts.pages.dev/ · Manual público sin secretos.</p>
 </main></body></html>
